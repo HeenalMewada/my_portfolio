@@ -1,0 +1,548 @@
+   * {
+       margin: 0%;
+       padding: 0%;
+       box-sizing: border-box;
+   }
+
+   body {
+       background-image: linear-gradient(to right bottom, rgb(236, 185, 236), rgb(184, 184, 231));
+       animation: bg_animation 12s infinite;
+   }
+
+   @keyframes bg_animation {
+       0% {
+           background-image: linear-gradient(to right, rgb(228, 228, 252), rgb(252, 209, 216));
+           /* background-image: linear-gradient(to right,#e9d4f7,#f8f1e8); */
+       }
+
+       25% {
+           background-image: linear-gradient(to right bottom, #b9baca, #fae2e8);
+       }
+
+       50% {
+           background-image: linear-gradient(to right bottom, rgb(212, 182, 212), rgb(185, 185, 223));
+           /* background-image: linear-gradient(to right bottom,#e4abfa,#eedbbd); */
+       }
+
+       75% {
+           /* background-image: linear-gradient(to right bottom,rgb(160, 166, 221),pink); */
+           background-image: linear-gradient(to right bottom, rgb(221, 181, 216), rgb(226, 246, 247));
+       }
+
+       100% {
+           background-image: linear-gradient(to right bottom, #f1f9fa, #fdd3fa);
+       }
+   }
+
+   .container {
+       width: 95%;
+       margin-left: 25px;
+       margin-top: 25px;
+       border: 1px solid transparent;
+       height: 620px;
+       border-radius: 25px;
+       background-color: rgba(0, 0, 0, 0.1);
+       overflow: auto;
+      
+   }
+
+   #navbar {
+       width: 100%;
+       height: 75px;
+       display: flex;
+       flex-direction: column;
+       align-items: flex-start;
+       justify-content: space-between;
+       /* animation: slideIn 1s ease-out forwards;   */
+       margin-top: 2px;
+       /* border: 1px solid black; */
+       position: fixed;
+       /* margin-top: 50px; */
+
+
+
+   }
+
+   #navbar .nav {
+       display: flex;
+       flex-direction: column;
+       align-self: flex-start;
+       justify-content: center;
+       gap: 20px;
+       padding-top: 35px;
+       padding-left: 40px;
+       /* border: 1px solid black; */
+   }
+
+   #navbar .nav i {
+       color: black;
+   }
+
+   .contain {
+       display: flex;
+       flex-direction: row;
+   }
+
+   #navbar .logo {
+       font-size: 30px;
+       margin-left: 20px;
+       margin-top: 10px;
+       font-family: "Lobster";
+       font-weight: normal;
+       color: rgb(112, 75, 145);
+       animation: pulse 2s infinite;
+
+   }
+
+   @keyframes pulse {
+       0% {
+           transform: scale(1);
+       }
+
+       50% {
+           transform: scale(1.1);
+       }
+
+       100% {
+           transform: scale(1);
+       }
+   }
+
+   /* #navbar:hover {
+     box-shadow: 0 0 20px rgba(20, 20, 20, 0.7); 
+     transition: box-shadow 0.3s ease; 
+} */
+
+   #navbar .nav .nav-items {
+       list-style-type: none;
+       font-size: 25px;
+       margin-right: 10px;
+
+
+   }
+
+
+   #navbar .nav .nav-link {
+       text-decoration: none;
+       color: rgb(114, 10, 114);
+
+
+   }
+
+   #navbar .nav .nav-link:hover {
+       text-decoration: underline;
+       /* color:rgb(129, 63, 129); */
+       color: rgb(201, 31, 110);
+   }
+
+   /* nav bar responsive */
+   @media screen and (min-width: 320px) and (max-width:1200px) {
+
+       /* Hide the text labels inside nav links */
+       #navbar .nav .nav-items a {
+           font-size: 25px;
+           /* Hides the text */
+           position: relative;
+           /* Keep icon in place */
+       }
+       #navbar .nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+       }
+#navbar{
+     
+        height: auto;
+        width: 100%;
+        /* flex-direction: row; */
+        justify-content: space-between;
+        padding: 10px 20px;
+        align-items: center;
+        position: relative;
+}
+       /* Show only icons */
+       #navbar .nav .nav-items a i {
+           font-size: 25px;
+           /* Keep icon size visible */
+       }
+
+       /* Optional: Adjust padding/margin for icons if needed */
+       #navbar .nav .nav-items a {
+           padding: 10px;
+       }
+
+       /* Hide category headings if necessary */
+       #navbar h2 {
+           font-size: 20px;
+       }
+
+       #navbar .logo {
+           font-size: 20px;
+       }
+
+       
+   }
+
+   /* social links */
+   .social_links {
+       display: flex;
+       flex-direction: column;
+       align-self: flex-start;
+       justify-content: center;
+       gap: 30px;
+       padding-top: 30px;
+       padding-left: 40px;
+       
+
+
+
+   }
+
+   .social_links a {
+       text-decoration: none;
+       font-size: 25px;
+       color: rgb(114, 10, 114);
+       /* color: #277bdb; */
+
+   }
+
+   .social_links a i {
+       font-size: 25px;
+       color: rgb(19, 18, 18);
+   }
+
+   /* social links responsive */
+   @media screen and (min-width: 320px) and (max-width:1240px) {
+       .social_links {
+         
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+           
+       }
+
+       .social_links h2 {
+           font-size: 25px;
+           /* text-align: center; */
+       }
+
+       .social_links a {
+           font-size: 25px;
+           /* text-align: center; */
+       }
+
+       .social_links i {
+           font-size: 15px;
+       }
+   }
+
+   /* main contain */
+
+   .main_content {
+       margin-left: 270px; 
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       padding: 10px;
+       margin-top: 20px;
+       /* border: 1px solid black; */
+       overflow: visible;
+   }
+
+   /* personal Info */
+   .main_content #personal_info {
+       height: 250px;
+       width: 100%;
+       display: flex;
+       border: 1px solid transparent;
+       border-radius: 30px;
+       background-color: rgb(223, 205, 252);
+
+   }
+
+   .main_content #personal_info .intro_text {
+       padding: 5px 0 0 10px;
+       text-align: center;
+   }
+
+   .main_content #personal_info .intro_text button {
+       background-color: rgb(253, 230, 234);
+       border: none;
+       cursor: pointer;
+       float: left;
+       margin-top: 10px;
+       margin-left: 25px;
+       font-weight: bold;
+       padding: 8px 16px;
+       border-radius: 25px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   }
+
+
+   /* main content */
+   @media screen and (min-width: 320px) and (max-width:1240px) {
+       .main_content {
+           width: 100%;
+           height: 100vh;
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+           padding: 10px;
+           margin-top: 50px;
+           
+           /* position: fixed; */
+            margin-left: 70px !important;
+       }
+.container{
+   /* width: 100%; */
+       margin-left: 25px;
+       margin-top: 25px;
+       border: 1px solid transparent;
+       height: auto;
+       display: flex;
+       flex-direction: column !important;
+       border-radius: 25px;
+       background-color: rgba(0, 0, 0, 0.1);
+       overflow: auto;  
+}
+       .main_content #personal_info {
+           max-width: 100%;
+           display: flex;
+           flex-direction: column;
+           height: 1000px;
+       }
+
+       .main_content #personal_info h2 {
+           text-align: center;
+           font-size: 20px;
+       }
+
+       .main_content #personal_info p {
+           font-size: 15px;
+       }
+   }
+
+   .main_content #personal_info .intro_text button:hover {
+       background-color: rgb(255, 200, 200);
+       transform: scale(1.05);
+
+   }
+
+   /* skills */
+   .main_content #my_skills .skill_img {
+       display: flex;
+       gap: 45px;
+
+   }
+
+   .main_content #my_skills .skill_img img {
+       padding: 20px;
+       margin-top: 10px;
+       /* text-align: center; */
+       height: 100px;
+       width: 100px;
+       border: 1px solid transparent;
+       background-color: rgba(0, 0, 0, 0.2);
+       border-radius: 25px;
+
+   }
+
+   .main_content #my_skills .skill_img img:hover {
+       transform: scale(1.2);
+   }
+
+   /* skills responsive */
+   @media screen and (min-width: 320px) and (max-width:1200px) {
+       #my_skills .skill_img {
+           flex-wrap: wrap;
+           justify-content: center;
+           gap: 5px;
+       }
+
+       #my_skills h1 {
+           font-size: 15px;
+           text-align: center;
+       }
+
+       #my_skills .skill_img img {
+           margin: 10px;
+           padding: 7px;
+       }
+   }
+
+   /* education */
+   #education .education_info {
+       margin-top: 10px;
+       width: 100%;
+       height: 80px;
+       display: flex;
+       justify-content: space-between;
+       font-size: 22px;
+       border: 1px solid transparent;
+       padding-top: 20px;
+       padding-right: 10px;
+       padding-left: 20px;
+       border-radius: 25px;
+       background-color: rgba(0, 0, 0, 0.2);
+   }
+
+   /* respnosive education */
+   @media screen and (min-width: 320px) and (max-width:1200px) {
+       #education h1 {
+           font-size: 15px;
+           text-align: center;
+       }
+
+       #education .education_info {
+           height: 150px;
+           width: 100%;
+           max-width: 1200px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
+
+       #education .education_info p {
+           font-size: 20px;
+       }
+   }
+
+   /* SCROLL BAR */
+   ::-webkit-scrollbar {
+       width: 5px;
+   }
+
+   /* Track */
+   ::-webkit-scrollbar-track {
+       background: #f1f1f1;
+   }
+
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+       background: #888;
+   }
+
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+       background: #555;
+   }
+
+   /* project section */
+   #projects .project {
+       display: flex;
+       gap: 20px;
+   }
+
+   #projects .project #project1:hover {
+       background-color: rgba(0, 0, 0, 0.1);
+       /* transform: scale(1); */
+   }
+
+   #projects .project #project1 button:hover {
+       transform: scale(1.2);
+
+   }
+
+   #projects .project #project2:hover {
+       background-color: rgba(0, 0, 0, 0.1);
+       /* transform: scale(1); */
+   }
+
+   #projects .project #project2 button:hover {
+       transform: scale(1.2);
+
+   }
+
+   #projects .project #project3:hover {
+       background-color: rgba(0, 0, 0, 0.1);
+       /* background-color: orange; */
+       /* transform: scale(1); */
+   }
+
+   #projects .project #project4:hover {
+       background-color: rgba(0, 0, 0, 0.1);
+       /* background-color: orange; */
+       /* transform: scale(1); */
+   }
+#projects .project #project5:hover {
+       background-color: rgba(0, 0, 0, 0.1);
+       /* background-color: orange; */
+       /* transform: scale(1); */
+   }
+   #projects #project3 button:hover {
+       transform: scale(1.2);
+
+   }
+
+   #projects #project4 button:hover {
+       transform: scale(1.2);
+        /* background-color: rgb(255, 150, 200); */
+
+   }
+
+  #projects #project5 button:hover {
+       transform: scale(1.2);
+        /* background-color: rgb(255, 150, 200); */
+
+   }
+   /* responsive projects */
+   @media screen and (min-width: 320px) and (max-width:1200px) {
+
+        .project {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+     #project1,
+    #project2,
+    #project3,
+    #project4,#project5 {
+        width: 95% !important;
+        height: auto !important;
+        padding: 20px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+    #projects h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+       /* #project1, #project2 {
+        height:350px;
+        width:100%;
+
+    }
+     */
+   
+   /* footer */
+   footer{
+     position: sticky;
+  bottom: 0;
+  width: 100%;
+   }
+/* Responsive footer */
+   /* @media screen and (min-width: 320px) and (max-width:1200px){
+    footer {
+        width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 1800px;
+    background-color: rgba(0,0,0,0.1);
+   
+    }
+   }   */
+
+
+
+
